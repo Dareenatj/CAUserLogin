@@ -18,7 +18,15 @@ public class InMemoryUserDataAccessObject implements SignupUserDataAccessInterfa
 
     private final Map<String, User> users = new HashMap<>();
 
-    private String currentUser = null;
+    private String currentUser;
+
+    /**
+     * Constructor to initialize the InMemoryUserDataAccessObject.
+     * currentUser will be initialized to null by default.
+     */
+    public InMemoryUserDataAccessObject() {
+        this.currentUser = null;
+    }
 
     @Override
     public boolean existsByName(String identifier) {
